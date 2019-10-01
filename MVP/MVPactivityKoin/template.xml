@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template format="5"
     revision="1"
-    name="MVP Koin Activity"
+    name="MVP Activity Koin"
     description="Creates a new MVP Koin activity.">
         
     <category value="MVP" />
