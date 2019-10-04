@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<template format="5"
+    revision="1"
+    name="MVP Base Presenter/View Delegate"
+    description="Creates MVP Base Presenter and View Delegate interfaces.">
+        
+    <category value="MVP" />
+        
+    <parameter id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp.screen.screenname.view.adapter" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+</template>
