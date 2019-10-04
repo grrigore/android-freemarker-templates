@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<template format="5"
+    revision="1"
+    name="Recycler View"
+    description="Creates a new Recycler View Adapter and View Holder.">
+        
+    <category value="Recycler View" />
+        
+    <parameter id="adapterName"
+        name="Adapter Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyAdapter"
+        help="The name of the recycler view adapter class to create" />
+
+    <parameter id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <parameter id="itemLayoutName" 
+        name="Item layout Name"
+        type="string"
+        constraints="layout|unique"
+        suggest="item_${classToResource(adapterName?split('Adapter')[0]?lower_case)}" 
+        default="item_myentity"
+        help="The name of the item layout to create for the recycler view adapter" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+</template>
