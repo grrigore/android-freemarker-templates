@@ -26,7 +26,7 @@
         name="Package name"
         type="string"
         constraints="package"
-        default="com.mycompany.myapp" />
+        default="com.mycompany.myapp.screen." />
     
     <parameter id="isLauncher"
         name="Launcher Activity"
