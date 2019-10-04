@@ -53,9 +53,8 @@ Copy the content of `MVP`/`RV` folders to the location of the templates folder:
 
 ## TODO
 
+- review MVP
 - check packages
 - Java/Kotlin code style
-- fix RV NPE bug
-- base presenter/viewdelegate
 - koin main file
 - dagger setup
