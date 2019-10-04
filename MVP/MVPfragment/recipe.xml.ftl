@@ -27,19 +27,19 @@
 
     <#-- IPresenter -->
     <instantiate from="root/src/app_package/presenter/IPresenter.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/presenter/I${fragmentClass?split("Fragment")[0]}Presenter.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/presenter/I${fragmentClass?split('Fragment')[0]}Presenter.${ktOrJavaExt}" />
 
     <#-- PresenterImpl -->
     <instantiate from="root/src/app_package/presenter/PresenterImpl.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/presenter/${fragmentClass?split("Fragment")[0]}Presenter.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/presenter/${fragmentClass?split('Fragment')[0]}Presenter.${ktOrJavaExt}" />
 
     <#-- IModel -->
     <instantiate from="root/src/app_package/model/IModel.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/model/I${fragmentClass?split("Fragment")[0]}Model.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/model/I${fragmentClass?split('Fragment')[0]}Model.${ktOrJavaExt}" />
 
     <#-- ModelImpl -->
     <instantiate from="root/src/app_package/model/ModelImpl.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/model/${fragmentClass?split("Fragment")[0]}Model.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/model/${fragmentClass?split('Fragment')[0]}Model.${ktOrJavaExt}" />
 
     <open file="${escapeXmlAttribute(srcOut)}/view/fragment/${fragmentClass}.${ktOrJavaExt}" />
 </recipe>

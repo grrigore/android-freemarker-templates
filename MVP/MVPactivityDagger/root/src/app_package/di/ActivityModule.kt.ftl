@@ -15,12 +15,12 @@ import ${packageName}.view.activity.${activityClass}
 class ${activityClass?split("Activity")[0]}Module {
     
     @Provides
-    fun provideViewDelegate(activity : ${activityClass}) :  IViewDelegate {
+    fun provideViewDelegate(activity : ${activityClass}) : IViewDelegate {
         return activity
     }
  
     @Provides
-    fun provide${activityClass?split("Activity")[0]}Model(apiInterface : ApiInterface) :I${activityClass?split("Activity")[0]}Model {
+    fun provide${activityClass?split("Activity")[0]}Model(apiInterface : ApiInterface) : I${activityClass?split("Activity")[0]}Model {
         return ${activityClass?split("Activity")[0]}Model(apiInterface)
     }
 

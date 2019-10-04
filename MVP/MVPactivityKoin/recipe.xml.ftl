@@ -32,19 +32,19 @@
 
     <#-- IPresenter -->
     <instantiate from="root/src/app_package/presenter/IPresenter.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/presenter/I${activityClass?split("Activity")[0]}Presenter.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/presenter/I${activityClass?split('Activity')[0]}Presenter.${ktOrJavaExt}" />
 
     <#-- PresenterImpl -->
     <instantiate from="root/src/app_package/presenter/PresenterImpl.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/presenter/${activityClass?split("Activity")[0]}Presenter.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/presenter/${activityClass?split('Activity')[0]}Presenter.${ktOrJavaExt}" />
 
     <#-- IModel -->
     <instantiate from="root/src/app_package/model/IModel.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/model/I${activityClass?split("Activity")[0]}Model.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/model/I${activityClass?split('Activity')[0]}Model.${ktOrJavaExt}" />
 
     <#-- ModelImpl -->
     <instantiate from="root/src/app_package/model/ModelImpl.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/model/${activityClass?split("Activity")[0]}Model.${ktOrJavaExt}" />
+                   to="${escapeXmlAttribute(srcOut)}/model/${activityClass?split('Activity')[0]}Model.${ktOrJavaExt}" />
 
     <open file="${escapeXmlAttribute(srcOut)}/view/activity/${activityClass}.${ktOrJavaExt}" />
 </recipe>
