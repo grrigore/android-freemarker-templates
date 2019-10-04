@@ -4,9 +4,12 @@ freemarker templates for android apps
 
 ## Setup
 
-Copy the files content to the location of the templates folder:
+Copy the content of `MVP`/`RV` folders to the location of the templates folder:
+
 `{ANDROID_STUDIO_LOCATION}/plugins/android/lib/templates/other/` - Windows
+
 `{ANDROID_STUDIO_LOCATION}/plugins/android/lib/templates/other` - Linux
+
 `/Applications/Android Studio.app/Contents/plugins/android/lib/templates/other/` - MacOS
 
 ## MVP
