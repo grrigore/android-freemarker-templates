@@ -13,11 +13,20 @@
         default="MyAdapter"
         help="The name of the recycler view adapter class to create" />
 
+
+    <parameter id="viewHolderName" 
+        name="View Holder Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${adapterName?split('Adapter')[0]}ViewHolder" 
+        default="MyViewHolder"
+        help="The name of the view holder class to create for the recycler view adapter" />
+
     <parameter id="packageName"
         name="Package name"
         type="string"
         constraints="package"
-        default="com.mycompany.myapp" />
+        default="com.mycompany.myapp.screen.screenname.view.adapter" />
 
     <parameter id="itemLayoutName" 
         name="Item layout Name"

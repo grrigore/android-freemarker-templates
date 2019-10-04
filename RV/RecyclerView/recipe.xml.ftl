@@ -3,7 +3,7 @@
 <recipe>
     <@kt.addAllKotlinDependencies />
     <dependency mavenUrl="com.android.support.constraint:constraint-layout:+" />
-    <dependency mavenURl="com.android.support:recyclerview-v7:+"/>
+    <dependency mavenUrl="com.android.support:recyclerview-v7:+"/>
 
     <instantiate from="root/res/layout/item_blank.xml.ftl"
                    to="${escapeXmlAttribute(resOut)}/layout/${itemLayoutName}.xml" />

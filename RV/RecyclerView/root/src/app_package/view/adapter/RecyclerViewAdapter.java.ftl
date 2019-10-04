@@ -1,13 +1,13 @@
-package ${packageName};
+package ${packageName}.view.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ${adapterName} extends RecyclerView.Adapter<${adapterName?split("Adapter")[0]}ViewHolder>{
+public class ${adapterName} extends RecyclerView.Adapter<${viewHolderName}>{
 
     private Context mContext;
     
@@ -17,19 +17,20 @@ public class ${adapterName} extends RecyclerView.Adapter<${adapterName?split("Ad
 
     @NonNull
     @Override
-    public ${adapterName?split("Adapter")[0]}ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ${viewHolderName} onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.${itemLayoutName}, viewGroup, false);
-        return new ${adapterName?split("Adapter")[0]}ViewHolder(view, mContext);
+        return new ${viewHolderName}(view, mContext);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ${adapterName?split("Adapter")[0]}ViewHolder ${adapterName?split("Adapter")[0]}ViewHolder, int i) {
-        ${adapterName?split("Adapter")[0]}ViewHolder.bindData(entity);
+    public void onBindViewHolder(@NonNull ${viewHolderName} ${viewHolderName?uncap_first}, int i) {
+        //TODO not implemented
+        ${viewHolderName?uncap_first}.bindData();
     }
 
     @Override
     public int getItemCount() {
-
+        //TODO not implemented
+        return 0;
     }
-
 }

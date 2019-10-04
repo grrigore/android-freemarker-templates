@@ -1,20 +1,22 @@
-package ${packageName};
+package ${packageName}.view.adapter;
 
 import android.content.Context;
 import android.view.View;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class ${adapterName?split("Adapter")[0]}ViewHolder extends RecyclerView.ViewHolder {
+public class ${viewHolderName} extends RecyclerView.ViewHolder {
 
     private Context mContext;
 
-    public ${adapterName?split("Adapter")[0]}ViewHolder (@NonNull View itemView, Context context) {
+    public ${viewHolderName} (@NonNull View itemView, Context context) {
+        //TODO not implemented
         super(itemView);
 
         mContext = context;
     }
 
-    public void bindData(Entity entity) {
-
+    public void bindData() {
+        //TODO not implemented
     }
 }
