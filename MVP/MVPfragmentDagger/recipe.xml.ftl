@@ -2,8 +2,6 @@
 <#import "root://activities/common/kotlin_macros.ftl" as kt>
 <recipe>
     <@kt.addAllKotlinDependencies />
-    <dependency mavenUrl="com.android.support.constraint:constraint-layout:+" />
-    
     <instantiate from="root/res/layout/fragment_blank.xml.ftl"
                    to="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
 

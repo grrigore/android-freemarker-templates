@@ -2,11 +2,6 @@
 <#import "root://activities/common/kotlin_macros.ftl" as kt>
 <recipe>
     <@kt.addAllKotlinDependencies />
-    <dependency mavenUrl="com.android.support.constraint:constraint-layout:+" />
-    <dependency mavenUrl="com.google.dagger:dagger:+" />
-    <dependency mavenUrl="com.google.dagger:dagger-android:+" />
-    <dependency mavenUrl="com.google.dagger:dagger-android-support:+" />
-    
     <merge from="root/AndroidManifest.xml.ftl"
              to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
 
