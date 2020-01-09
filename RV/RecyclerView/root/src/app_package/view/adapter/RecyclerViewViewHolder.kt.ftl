@@ -27,7 +27,7 @@ class ${viewHolderName}<#if hasDataBinding>(
       ${layoutBindingName}Binding.item = ${item}
       ${layoutBindingName}Binding.executePendingBindings()
     <#else>
-
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     </#if>
     }    
 }
