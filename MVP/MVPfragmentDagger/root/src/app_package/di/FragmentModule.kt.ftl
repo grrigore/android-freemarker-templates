@@ -8,14 +8,14 @@ import ${packageName}.model.${fragmentClass?split("Fragment")[0]}Model
 import ${packageName}.model.I${fragmentClass?split("Fragment")[0]}Model
 import ${packageName}.presenter.${fragmentClass?split("Fragment")[0]}Presenter
 import ${packageName}.presenter.I${fragmentClass?split("Fragment")[0]}Presenter
-import ${packageName}.view.delegate.IViewDelegate
-import ${packageName}.view.activity.${fragmentClass}
+import ${packageName}.view.I${fragmentClass?split("Fragment")[0]}Delegate
+import ${packageName}.view.${fragmentClass}
 
 @Module
 class ${fragmentClass?split("Fragment")[0]}Module {
     
     @Provides
-    fun provideViewDelegate(fragment : ${fragmentClass}) :  IViewDelegate {
+    fun provideViewDelegate(fragment : ${fragmentClass}) :  I${fragmentClass?split("Fragment")[0]}Delegate {
         return fragment
     }
  
@@ -26,8 +26,8 @@ class ${fragmentClass?split("Fragment")[0]}Module {
 
     @Provides
     fun provide${fragmentClass?split("Fragment")[0]}Presenter(context : Context ,
-                                        viewDelegate : IViewDelegate,
+                                        viewDelegate : I${fragmentClass?split("Fragment")[0]}Delegate,
                                         model : I${fragmentClass?split("Fragment")[0]}Model) : I${fragmentClass?split("Fragment")[0]}Presenter {
-        return ${activityClass?split("Fragment")[0]}Presenter(context, viewDelegate, model)
+        return ${fragmentClass?split("Fragment")[0]}Presenter(context, viewDelegate, model)
     }
 }

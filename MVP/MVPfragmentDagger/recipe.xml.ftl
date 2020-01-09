@@ -16,12 +16,12 @@
     </#if>
 
     <#-- Fragment -->
-    <instantiate from="root/src/app_package/view/fragment/MvpFragment.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/view/fragment/${fragmentClass}.${ktOrJavaExt}" />
+    <instantiate from="root/src/app_package/view/MvpFragment.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/view/${fragmentClass}.${ktOrJavaExt}" />
 
     <#-- IViewDelegate -->
-    <instantiate from="root/src/app_package/view/delegate/IViewDelegate.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/view/delegate/IViewDelegate.${ktOrJavaExt}" />
+    <instantiate from="root/src/app_package/view/IViewDelegate.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/view/I${fragmentClass?split("Fragment")[0]}Delegate.${ktOrJavaExt}" />
 
     <#-- IPresenter -->
     <instantiate from="root/src/app_package/presenter/IPresenter.${ktOrJavaExt}.ftl"
@@ -39,5 +39,10 @@
     <instantiate from="root/src/app_package/model/ModelImpl.${ktOrJavaExt}.ftl"
                    to="${escapeXmlAttribute(srcOut)}/model/${fragmentClass?split("Fragment")[0]}Model.${ktOrJavaExt}" />
 
-    <open file="${escapeXmlAttribute(srcOut)}/view/fragment/${fragmentClass}.${ktOrJavaExt}" />
+                   
+    <#-- FragmentModule -->
+    <instantiate from="root/src/app_package/di/FragmentModule.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/di/${fragmentClass?split("Fragment")[0]}Module.${ktOrJavaExt}" />
+
+    <open file="${escapeXmlAttribute(srcOut)}/view/${fragmentClass}.${ktOrJavaExt}" />
 </recipe>

@@ -46,5 +46,5 @@
     <instantiate from="root/src/app_package/di/ActivityModule.${ktOrJavaExt}.ftl"
                    to="${escapeXmlAttribute(srcOut)}/di/${activityClass?split("Activity")[0]}Module.${ktOrJavaExt}" />
 
-    <open file="${escapeXmlAttribute(srcOut)}/view/activity/${activityClass}.${ktOrJavaExt}" />
+    <open file="${escapeXmlAttribute(srcOut)}/view/${activityClass}.${ktOrJavaExt}" />
 </recipe>

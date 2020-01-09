@@ -37,7 +37,8 @@
     <parameter id="hasAuth"
         name="Auth Coroutine Presenter"
         type="boolean"
-        default="true" />
+        default="true"
+        help="If true, the activity has an AuthCoroutinePresenter, else it has a CoroutinePresenter"  />
 
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
