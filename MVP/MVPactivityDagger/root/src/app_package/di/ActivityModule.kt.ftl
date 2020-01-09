@@ -2,32 +2,36 @@ package ${packageName}.di
 
 import android.content.Context
 
+<#assign activity>
+    ${activityClass?split("Activity")[0]}
+</#assign>
+
 import dagger.Module
 import dagger.Provides
-import ${packageName}.model.${activityClass?split("Activity")[0]}Model
-import ${packageName}.model.I${activityClass?split("Activity")[0]}Model
-import ${packageName}.presenter.${activityClass?split("Activity")[0]}Presenter
-import ${packageName}.presenter.I${activityClass?split("Activity")[0]}Presenter
-import ${packageName}.view.I${activityClass?split("Activity")[0]}Delegate
+import ${packageName}.model.${activity}Model
+import ${packageName}.model.I${activity}Model
+import ${packageName}.presenter.${activity}Presenter
+import ${packageName}.presenter.I${activity}Presenter
+import ${packageName}.view.I${activity}Delegate
 import ${packageName}.view.${activityClass}
 
 @Module
-class ${activityClass?split("Activity")[0]}Module {
+class ${activity}Module {
     
     @Provides
-    fun provideViewDelegate(activity : ${activityClass}) : I${activityClass?split("Activity")[0]}Delegate {
+    fun provideViewDelegate(activity : ${activityClass}) : I${activity}Delegate {
         return activity
     }
  
     @Provides
-    fun provide${activityClass?split("Activity")[0]}Model(apiInterface : ApiInterface) : I${activityClass?split("Activity")[0]}Model {
-        return ${activityClass?split("Activity")[0]}Model(apiInterface)
+    fun provide${activity}Model(apiInterface : ApiInterface) : I${activity}Model {
+        return ${activity}Model(apiInterface)
     }
 
     @Provides
-    fun provide${activityClass?split("Activity")[0]}Presenter(context : Context ,
-                                        viewDelegate : I${activityClass?split("Activity")[0]}Delegate,
-                                        model : I${activityClass?split("Activity")[0]}Model) : I${activityClass?split("Activity")[0]}Presenter {
-        return ${activityClass?split("Activity")[0]}Presenter(context, viewDelegate, model)
+    fun provide${activity}Presenter(context : Context ,
+                                    viewDelegate : I${activity}Delegate,
+                                    model : I${activity}Model) : I${activity}Presenter {
+        return ${activity}Presenter(context, viewDelegate, model)
     }
 }

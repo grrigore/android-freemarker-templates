@@ -1,5 +1,9 @@
 package ${packageName}.model
 
-class ${activityClass?split("Activity")[0]}Model(private val apiInterface : ApiInterface) : I${activityClass?split("Activity")[0]}Model {
+<#assign activity>
+    ${activityClass?split("Activity")[0]}
+</#assign>
+
+class ${activity}Model(private val apiInterface : ApiInterface) : I${activity}Model {
 
 }

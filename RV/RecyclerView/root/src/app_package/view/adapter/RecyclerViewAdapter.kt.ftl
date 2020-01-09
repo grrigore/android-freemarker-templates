@@ -1,24 +1,36 @@
-package ${packageName}.view.adapter
+package ${packageName}.adapter
 
 import android.content.Context
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import ro.roweb.mvp.android.base.adapter.<#if isMutable>MutableListRecyclerAdapter<#else>ListRecyclerAdapter</#if>
 
-class ${adapterName}(private val context : Context) : RecyclerView.Adapter<${viewHolderName}>() {
+<#assign layoutBindingName>
+    <#list itemLayoutName?split("_") as item>
+        <#if item?matches(itemLayoutName?split("_")[0])>
+        ${item}<#t>
+        <#else>
+        ${item?cap_first}<#t>
+        </#if>
+    </#list>
+</#assign>
+
+class ${adapterName}(private val context : Context) : <#if isMutable>MutableListRecyclerAdapter<#else>ListRecyclerAdapter</#if><${itemType}, ${viewHolderName}>() {
 
     override fun onCreateViewHolder(viewGroup : ViewGroup, i : Int) : ${viewHolderName} {
+    <#if hasDataBinding>
+        val inflater =
+            LayoutInflater.from(context)
+        val ${layoutBindingName}Binding = ${layoutBindingName?cap_first}Binding.inflate(inflater, viewGroup, false)
+
+        return ${viewHolderName}(${layoutBindingName}, this)
+    <#else>
         val view : View = LayoutInflater.from(context).inflate(R.layout.${itemLayoutName}, viewGroup, false)
         return ${viewHolderName}(view, context)
+    </#if>
     }
 
     override fun onBindViewHolder(${viewHolderName?uncap_first} : ${viewHolderName}, i : Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        ${viewHolderName?uncap_first}.bindData()
-    }
-
-    override fun getItemCount() : Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        ${viewHolderName?uncap_first}.bindData(items[i])
     }
 }

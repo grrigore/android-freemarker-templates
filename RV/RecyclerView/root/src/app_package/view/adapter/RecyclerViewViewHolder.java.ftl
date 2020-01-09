@@ -1,4 +1,4 @@
-package ${packageName}.view.adapter;
+package ${packageName}.adapter;
 
 import android.content.Context;
 import android.view.View;

@@ -1,5 +1,9 @@
 package ${packageName}.model
 
-interface I${activityClass?split("Activity")[0]}Model {
+<#assign activity>
+    ${activityClass?split("Activity")[0]}
+</#assign>
+
+interface I${activity}Model {
 
 }

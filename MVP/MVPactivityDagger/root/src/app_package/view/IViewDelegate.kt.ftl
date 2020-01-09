@@ -6,6 +6,12 @@ import ro.roweb.mvp.android.view.AuthViewDelegate
 import ro.roweb.mvp.android.view.ProgressViewDelegate
 </#if>
 
-interface I${activityClass?split("Activity")[0]}Delegate : <#if hasAuth>AuthViewDelegate<#else>ProgressViewDelegate</#if> {
+
+<#assign activity>
+    ${activityClass?split("Activity")[0]}
+</#assign>
+
+
+interface I${activity}Delegate : <#if hasAuth>AuthViewDelegate<#else>ProgressViewDelegate</#if> {
 
 }

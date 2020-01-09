@@ -1,10 +1,14 @@
 package ${packageName}.view
 
+<#assign activity>
+    ${activityClass?split("Activity")[0]}
+</#assign>
+
 import android.os.Bundle
 import ro.roweb.mvp.android.base.MvpActivity
-import ${packageName}.presenter.I${activityClass?split("Activity")[0]}Presenter
+import ${packageName}.presenter.I${activity}Presenter
 
-class ${activityClass}(override var presenter : I${activityClass?split("Activity")[0]}Presenter) : MvpActivity(), I${activityClass?split("Activity")[0]}Delegate {
+class ${activityClass}(override var presenter : I${activity}Presenter) : MvpActivity(), I${activity}Delegate {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.${layoutName})

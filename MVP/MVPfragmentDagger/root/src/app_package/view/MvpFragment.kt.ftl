@@ -1,14 +1,18 @@
 package ${packageName}.view
 
+<#assign fragment>
+    ${fragmentClass?split("Fragment")[0]}
+</#assign>
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ro.roweb.mvp.android.base.MvpFragment
-import ${packageName}.presenter.I${fragmentClass?split("Fragment")[0]}Presenter
+import ${packageName}.presenter.I${fragment}Presenter
 
-class ${fragmentClass}(override var presenter : I${fragmentClass?split("Fragment")[0]}Presenter) : MvpFragment(), I${fragmentClass?split("Fragment")[0]}Delegate {
+class ${fragmentClass}(override var presenter : I${fragment}Presenter) : MvpFragment(), I${fragment}Delegate {
  
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

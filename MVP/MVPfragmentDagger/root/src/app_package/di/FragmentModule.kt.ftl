@@ -1,33 +1,39 @@
 package ${packageName}.di
 
+
+<#assign fragment>
+    ${fragmentClass?split("Fragment")[0]}
+</#assign>
+
+
 import android.content.Context
 
 import dagger.Module
 import dagger.Provides
-import ${packageName}.model.${fragmentClass?split("Fragment")[0]}Model
-import ${packageName}.model.I${fragmentClass?split("Fragment")[0]}Model
-import ${packageName}.presenter.${fragmentClass?split("Fragment")[0]}Presenter
-import ${packageName}.presenter.I${fragmentClass?split("Fragment")[0]}Presenter
-import ${packageName}.view.I${fragmentClass?split("Fragment")[0]}Delegate
+import ${packageName}.model.${fragment}Model
+import ${packageName}.model.I${fragment}Model
+import ${packageName}.presenter.${fragment}Presenter
+import ${packageName}.presenter.I${fragment}Presenter
+import ${packageName}.view.I${fragment}Delegate
 import ${packageName}.view.${fragmentClass}
 
 @Module
-class ${fragmentClass?split("Fragment")[0]}Module {
+class ${fragment}Module {
     
     @Provides
-    fun provideViewDelegate(fragment : ${fragmentClass}) :  I${fragmentClass?split("Fragment")[0]}Delegate {
+    fun provideViewDelegate(fragment : ${fragmentClass}) :  I${fragment}Delegate {
         return fragment
     }
  
     @Provides
-    fun provide${fragmentClass?split("Fragment")[0]}Model(apiInterface : ApiInterface) :I${fragmentClass?split("Fragment")[0]}Model {
-        return ${fragmentClass?split("Fragment")[0]}Model(apiInterface)
+    fun provide${fragment}Model(apiInterface : ApiInterface) :I${fragment}Model {
+        return ${fragment}Model(apiInterface)
     }
 
     @Provides
-    fun provide${fragmentClass?split("Fragment")[0]}Presenter(context : Context ,
-                                        viewDelegate : I${fragmentClass?split("Fragment")[0]}Delegate,
-                                        model : I${fragmentClass?split("Fragment")[0]}Model) : I${fragmentClass?split("Fragment")[0]}Presenter {
-        return ${fragmentClass?split("Fragment")[0]}Presenter(context, viewDelegate, model)
+    fun provide${fragment}Presenter(context : Context ,
+                                        viewDelegate : I${fragment}Delegate,
+                                        model : I${fragment}Model) : I${fragment}Presenter {
+        return ${fragment}Presenter(context, viewDelegate, model)
     }
 }

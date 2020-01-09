@@ -36,6 +36,23 @@
         default="item_myentity"
         help="The name of the item layout to create for the recycler view adapter" />
 
+    <parameter id="itemType" 
+        name="Item type class"
+        type="string"
+        help="The item type" />
+
+    <parameter id="hasDataBinding"
+        name="With Data Binding"
+        type="boolean"
+        default="true"
+        help="Creates Data Binding layout and Recycler View Holder" />
+
+    <parameter id="isMutable"
+        name="Mutable List Recycler"
+        type="boolean"
+        default="false"
+        help="Creates a Recycler View with mutable list" />
+
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
 </template>
