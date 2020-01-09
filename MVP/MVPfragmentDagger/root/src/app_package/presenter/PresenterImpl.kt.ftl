@@ -1,8 +1,6 @@
 package ${packageName}.presenter
 
-<#assign fragment>
-    ${fragmentClass?split("Fragment")[0]}
-</#assign>
+<#assign fragment>${fragmentClass?split("Fragment")[0]}</#assign>
 
 import android.content.Context
 import ro.roweb.mvp.android.presenter.<#if hasAuth>AuthCoroutinePresenter<#else>CoroutinePresenter</#if>

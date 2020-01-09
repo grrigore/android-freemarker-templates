@@ -23,7 +23,7 @@ class ${adapterName}(private val context : Context) : <#if isMutable>MutableList
             LayoutInflater.from(context)
         val ${layoutBindingName}Binding = ${layoutBindingName?cap_first}Binding.inflate(inflater, viewGroup, false)
 
-        return ${viewHolderName}(${layoutBindingName}, this)
+        return ${viewHolderName}(${layoutBindingName})
     <#else>
         val view : View = LayoutInflater.from(context).inflate(R.layout.${itemLayoutName}, viewGroup, false)
         return ${viewHolderName}(view, context)

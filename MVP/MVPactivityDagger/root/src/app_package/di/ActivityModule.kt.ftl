@@ -2,9 +2,7 @@ package ${packageName}.di
 
 import android.content.Context
 
-<#assign activity>
-    ${activityClass?split("Activity")[0]}
-</#assign>
+<#assign activity>${activityClass?split("Activity")[0]}</#assign>
 
 import dagger.Module
 import dagger.Provides

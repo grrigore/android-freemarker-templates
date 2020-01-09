@@ -1,9 +1,7 @@
 package ${packageName}.di
 
 
-<#assign fragment>
-    ${fragmentClass?split("Fragment")[0]}
-</#assign>
+<#assign fragment>${fragmentClass?split("Fragment")[0]}</#assign>
 
 
 import android.content.Context

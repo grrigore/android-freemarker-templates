@@ -1,8 +1,6 @@
 package ${packageName}.view
 
-<#assign fragment>
-    ${fragmentClass?split("Fragment")[0]}
-</#assign>
+<#assign fragment>${fragmentClass?split("Fragment")[0]}</#assign>
 
 import android.os.Bundle
 import android.view.LayoutInflater

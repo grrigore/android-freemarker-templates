@@ -4,9 +4,7 @@ import android.content.Context
 import ro.roweb.mvp.android.presenter.<#if hasAuth>AuthCoroutinePresenter<#else>CoroutinePresenter</#if>
 
 
-<#assign activity>
-    ${activityClass?split("Activity")[0]}
-</#assign>
+<#assign activity>${activityClass?split("Activity")[0]}</#assign>
 
 
 import ${packageName}.view.I${activity}Delegate

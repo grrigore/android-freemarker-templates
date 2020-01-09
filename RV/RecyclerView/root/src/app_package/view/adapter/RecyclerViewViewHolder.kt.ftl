@@ -1,7 +1,5 @@
 package ${packageName}.adapter
 
-import android.content.Context
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
 <#assign layoutBindingName>
@@ -14,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
   </#list>
 </#assign>
 
-<#assign item>
-  ${itemType?uncap_first}
-</#assign>
+<#assign item>${itemType?uncap_first}</#assign>
 
 class ${viewHolderName}<#if hasDataBinding>(
     private val ${layoutBindingName}Binding : ${layoutBindingName?cap_first}Binding

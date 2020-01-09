@@ -1,8 +1,6 @@
 package ${packageName}.view
 
-<#assign activity>
-    ${activityClass?split("Activity")[0]}
-</#assign>
+<#assign activity>${activityClass?split("Activity")[0]}</#assign>
 
 import android.os.Bundle
 import ro.roweb.mvp.android.base.MvpActivity
