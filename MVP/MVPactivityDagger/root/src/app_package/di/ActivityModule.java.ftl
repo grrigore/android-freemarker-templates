@@ -8,14 +8,14 @@ import ${packageName}.model.${activityClass?split("Activity")[0]}Model;
 import ${packageName}.model.I${activityClass?split("Activity")[0]}Model;
 import ${packageName}.presenter.${activityClass?split("Activity")[0]}Presenter;
 import ${packageName}.presenter.I${activityClass?split("Activity")[0]}Presenter;
-import ${packageName}.view.delegate.IViewDelegate;
-import ${packageName}.view.activity.${activityClass};
+import ${packageName}.view.I${activityClass?split("Activity")[0]}Delegate;
+import ${packageName}.view.${activityClass};
 
 @Module
 public class ${activityClass?split("Activity")[0]}Module {
     
     @Provides
-    IViewDelegate provideViewDelegate(${activityClass} activity) {
+    I${activityClass?split("Activity")[0]}Delegate provideViewDelegate(${activityClass} activity) {
         return activity;
     }
  
@@ -26,7 +26,7 @@ public class ${activityClass?split("Activity")[0]}Module {
 
     @Provides
     I${activityClass?split("Activity")[0]}Presenter provide${activityClass?split("Activity")[0]}Presenter(Context context,
-                                        IViewDelegate viewDelegate,
+                                        I${activityClass?split("Activity")[0]}Delegate viewDelegate,
                                         I${activityClass?split("Activity")[0]}Model model) {
         return new ${activityClass?split("Activity")[0]}Presenter(context, viewDelegate, model);
     }

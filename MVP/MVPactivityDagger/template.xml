@@ -34,6 +34,11 @@
         default="false"
         help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
 
+    <parameter id="hasAuth"
+        name="Auth Coroutine Presenter"
+        type="boolean"
+        default="true" />
+
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
 </template>

@@ -1,5 +1,7 @@
 package ${packageName}.presenter
 
-interface I${activityClass?split("Activity")[0]}Presenter {
+import ro.roweb.mvp.android.presenter.IPresenter
+
+interface I${activityClass?split("Activity")[0]}Presenter : IPresenter {
 
 }

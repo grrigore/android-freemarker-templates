@@ -19,12 +19,12 @@
     </#if>
 
     <#-- Activity -->
-    <instantiate from="root/src/app_package/view/activity/MvpActivity.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/view/activity/${activityClass}.${ktOrJavaExt}" />
+    <instantiate from="root/src/app_package/view/MvpActivity.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/view/${activityClass}.${ktOrJavaExt}" />
 
     <#-- IViewDelegate -->
-    <instantiate from="root/src/app_package/view/delegate/IViewDelegate.${ktOrJavaExt}.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/view/delegate/IViewDelegate.${ktOrJavaExt}" />
+    <instantiate from="root/src/app_package/view/IViewDelegate.${ktOrJavaExt}.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/view/I${activityClass?split("Activity")[0]}Delegate.${ktOrJavaExt}" />
 
     <#-- IPresenter -->
     <instantiate from="root/src/app_package/presenter/IPresenter.${ktOrJavaExt}.ftl"
